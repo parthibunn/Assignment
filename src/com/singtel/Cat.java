@@ -1,6 +1,6 @@
 package com.singtel;
 
-public class Cat implements Animal, Singable {
+public class Cat implements Animal, Singable, Walkable {
 
 	@Override
 	public void walk() {

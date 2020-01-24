@@ -1,6 +1,6 @@
 package com.singtel;
 
-public class Dog implements Animal,Singable {
+public class Dog implements Animal,Singable, Walkable {
 
 	@Override
 	public void walk() {

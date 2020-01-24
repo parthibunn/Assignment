@@ -1,4 +1,4 @@
 package com.singtel;
 
-public interface Bird extends Animal,Singable {
+public interface Bird extends Animal,Walkable,Singable {
 }
