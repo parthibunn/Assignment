@@ -1,6 +1,6 @@
 package com.singtel;
 
-public class Rooster<T extends Chicken> implements Singable {
+public class Rooster<T extends Chicken> implements Singable, Animal {
 	T chick;
 	
 	Rooster(T obj){

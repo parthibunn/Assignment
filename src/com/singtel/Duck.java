@@ -1,6 +1,6 @@
 package com.singtel;
 
-public class Duck implements Bird,Flyable {
+public class Duck implements Bird,Flyable, Swimmable {
 
 	@Override
 	public void sing() {

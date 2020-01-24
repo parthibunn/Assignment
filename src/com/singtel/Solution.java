@@ -2,33 +2,30 @@ package com.singtel;
 
 public class Solution {
 	
-	public String getStage(Butterfly butterfly) {
-		if(butterfly instanceof Caterpillar) {
-			return "Caterpillar";
-		}
-		if(butterfly instanceof Pupa) {
-			return "Pupa";
-		}
-		if(butterfly instanceof Adult) {
-			return "Adult";
-		}
-		return "";
-	}
-	
 	public static void main(String[] args) {
-		Solution sol = new Solution();
-		Transformable caterpillar = new Caterpillar();
-		System.out.println(sol.getStage(caterpillar));
-		System.out.println(caterpillar instanceof Flyable?"Caterpillar can fly":"Caterpillar cannot fly");
-		System.out.println(caterpillar instanceof Crawlable?"Caterpillar can crawl":"Caterpillar cannot crawl");
-		Transformable pupa = (Transformable)caterpillar.transform();
-		System.out.println(sol.getStage(pupa));
-		System.out.println(pupa instanceof Breathable?"Pupa can breathe":"pupa cannot breathe");
-		Butterfly adult = pupa.transform();
-		System.out.println(sol.getStage(adult));
-		System.out.println(adult instanceof Flyable?"Adult can fly":"Adult cannot fly");
-		System.out.println(adult instanceof Singable?"Adult can sing":"Adult cannot sing");
-	
+		
+		int canFly=0, canWalk=0, canSing=0, canSwim=0;
+		
+		Animal[] animals = new Animal[]{ new Duck(), new Chicken(), new Rooster<>(new Chicken()), new Parrot<>(new Dog()), 
+				new Dog(), new Caterpillar(), new Pupa(), new Adult(), new Cat()
+				};
+		
+		for(int i=0; i<animals.length; i++) {
+			if(animals[i] instanceof Flyable) {
+				canFly+=1;
+			}
+			if(animals[i] instanceof Walkable) {
+				canWalk+=1;
+			}
+			if(animals[i] instanceof Singable) {
+				canSing+=1;
+			}
+			if(animals[i] instanceof Swimmable) {
+				canSwim+=1;
+			}
+		}
+		
+		System.out.println(canFly + " animals can Fly\n" + canWalk + " animals can Walk\n" + canSing + " animals can Sing\n" + canSwim + " animals can Swim");
 	}
 
 }
